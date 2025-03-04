@@ -12,7 +12,7 @@ with st.sidebar:
 if "memory" not in st.session_state:
     st.session_state["memory"] = ConversationBufferMemory(return_messages=True)
     st.session_state["messages"] = [{"role": "ai",
-                                     "content": "小柔姐姐，你好，我是小蓝的AI助手，你可以叫我DeepBlue，请问有什么可以帮你的吗？"}]
+                                     "content": "王兄，牟兄，顾兄，好久不见，我是小蓝的AI助手，你可以叫我DeepBlue，请问有什么可以帮你的吗？"}]
 
 for message in st.session_state["messages"]:
     st.chat_message(message["role"]).write(message["content"])
