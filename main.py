@@ -3,7 +3,7 @@ from langchain.memory import ConversationBufferMemory
 
 from utils import get_chat_response
 
-st.title("💬 乱世同盟")
+st.title("💬 仿ChatGPT")
 
 with st.sidebar:
     openai_api_key = st.text_input("请输入OpenAI API Key：", type="password")
@@ -12,7 +12,7 @@ with st.sidebar:
 if "memory" not in st.session_state:
     st.session_state["memory"] = ConversationBufferMemory(return_messages=True)
     st.session_state["messages"] = [{"role": "ai",
-                                     "content": "何帅老师，好久不见，我是小蓝的AI助手，您可以叫我DeepBlue，请问有什么可以帮你的吗？"}]
+                                     "content": "你好，我是你的AI助手，请问有什么可以帮你的吗？"}]
 
 for message in st.session_state["messages"]:
     st.chat_message(message["role"]).write(message["content"])
