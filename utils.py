@@ -6,8 +6,7 @@ from langchain.memory import ConversationBufferMemory
 
 
 def get_chat_response(prompt, memory, openai_api_key):
-    model = ChatOpenAI(model="gpt-3.5-turbo", openai_api_key="sk-VllibgOnUePUv84AG1u9ASKMEdJWIJtJluyX7UtH1yWGS60R",
-                                              base_url="https://api.aigc369.com?v1")
+    model = ChatOpenAI(model="gpt-3.5-turbo", openai_api_key="sk-VllibgOnUePUv84AG1u9ASKMEdJWIJtJluyX7UtH1yWGS60R",base_url="https://api.aigc369.com?v1")
     chain = ConversationChain(llm=model, memory=memory)
 
     response = chain.invoke({"input": prompt})
